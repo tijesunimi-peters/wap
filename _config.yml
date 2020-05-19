@@ -31,7 +31,7 @@ plugins:
   - jekyll-feed
 
 logo: /myAvatar.png
-validator_logo: html5_validator.png
+validator_logo: /html5_validator.png
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

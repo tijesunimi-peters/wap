@@ -49,10 +49,12 @@
         {% endif %}
         <p>
           <small>&copy; 2020</small>
-          {% if site.validator_logo %}
-            <a href="https://validator.w3.org/check/referer">
-              <img src="{{site.validator_logo}}" alt="">
-            </a>
+          {% if site.github.is_project_page %}
+            {% if site.validator_logo %}
+              <a href="https://validator.w3.org/check/referer">
+                <img src="{{site.validator_logo}}" alt="">
+              </a>
+            {% endif %}
           {% endif %}
         </p>
       </footer>

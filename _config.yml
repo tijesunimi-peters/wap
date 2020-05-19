@@ -30,7 +30,7 @@ theme: jekyll-theme-minimal
 plugins:
   - jekyll-feed
 
-logo: /profile_picture.jpg
+logo: /myAvatar.png
 validator_logo: /html5_validator.png
 
 # Exclude from processing.

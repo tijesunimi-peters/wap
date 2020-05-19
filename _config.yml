@@ -17,7 +17,7 @@ title: Tijesunimi P.
 email: tijesunimipeters@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Tijesunimi Omotosho Peters ~ CodeChef
-baseurl: "/" # the subpath of your site, e.g. /blog
+baseurl: "/wap/" # the subpath of your site, e.g. /blog
 url: "https://tijesunimi-peters.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb
 github_username: tijesunimi-peters
@@ -31,6 +31,7 @@ plugins:
 logo: /myAvatar.png
 validator_logo: html5_validator.png
 about_me: about
+base_dir: "/wap/"
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

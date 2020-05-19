@@ -27,7 +27,7 @@
           {{ site.description | default: site.github.project_tagline }}
           {% if site.about_me %}
             <small>
-              <a href="{{absolute_url}}/{{site.about_me}}">About me</a>
+              <a href="{{ "/" | absolute_url }}{{site.about_me}}">About me</a>
             </small>
           {% endif %}
         </p>

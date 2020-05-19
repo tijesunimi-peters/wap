@@ -18,11 +18,9 @@ email: tijesunimipeters@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Tijesunimi Omotosho Peters ~ CodeChef
 baseurl: "/" # the subpath of your site, e.g. /blog
-url: "https://github.com/tijesunimi-peters" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://tijesunimi-peters.github.io/wap" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb
 github_username: tijesunimi-peters
-
-github_owner_url: "https://github.com/tijesunimi-peters"
 
 # Build settings
 markdown: kramdown

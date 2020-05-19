@@ -10,6 +10,9 @@
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
+    {% if page.style %}
+      <link rel="stylesheet" href="/assets/css/{{page.style}}" />
+    {% endif %}
   </head>
   <body>
     <div class="wrapper">
@@ -20,7 +23,14 @@
           <img src="{{site.logo | relative_url}}" alt="Logo" />
         {% endif %}
 
-        <p>{{ site.description | default: site.github.project_tagline }}</p>
+        <p>
+          {{ site.description | default: site.github.project_tagline }}
+          {% if site.about_me %}
+            <small>
+              <a href="{{absolute_url}}/{{site.about_me}}">About me</a>
+            </small>
+          {% endif %}
+        </p>
 
         {% if site.github.is_project_page %}
         <p class="view"><a href="{{ site.github.repository_url }}">View the Project on GitHub <small>{{ site.github.repository_nwo }}</small></a></p>

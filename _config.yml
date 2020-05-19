@@ -30,6 +30,7 @@ plugins:
 
 logo: /myAvatar.png
 validator_logo: html5_validator.png
+about_me: about
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

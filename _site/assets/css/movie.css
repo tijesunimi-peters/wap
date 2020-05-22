@@ -5,10 +5,10 @@ body {
   margin: unset; }
 
 .tmnt {
-  background-image: url("http://localhost:4000/assets/img/skeleton_files/background.png"); }
+  background-image: url("https://tijesunimipeters.com/assets/img/skeleton_files/background.png"); }
   .tmnt .banner {
     text-align: center;
-    background-image: url("http://localhost:4000/assets/img/skeleton_files/bannerbg.png"); }
+    background-image: url("https://tijesunimipeters.com/assets/img/skeleton_files/bannerbg.png"); }
   .tmnt .page-header {
     text-align: center;
     font-size: 24pt;
@@ -69,7 +69,7 @@ body {
   .tmnt .overall-rating {
     box-sizing: border-box;
     border-top-left-radius: 16px;
-    background-image: url("http://localhost:4000/assets/img/skeleton_files/rbg.png");
+    background-image: url("https://tijesunimipeters.com/assets/img/skeleton_files/rbg.png");
     background-repeat: repeat-x; }
     .tmnt .overall-rating img {
       border-top-left-radius: 16px;

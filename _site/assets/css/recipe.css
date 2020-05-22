@@ -1,0 +1,46 @@
+body {
+  color: #404040;
+  font-size: 11pt;
+  font-family: Georgia, Garamond, sans-serif; }
+
+a {
+  color: #a4a400; }
+
+.tbsp-text {
+  text-decoration: underline; }
+
+.heading, .sub-heading {
+  color: #a4a400;
+  background-color: #f0f0f0;
+  font-family: 'Lucida Sans Unicode', Helvetica, Arial, sans-serif;
+  text-align: center;
+  font-size: 22pt;
+  font-weight: bold;
+  text-decoration: underline; }
+
+.sub-heading {
+  text-align: left;
+  font-size: 18pt;
+  font-weight: normal; }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto; }
+
+.copyright {
+  font-family: monospace;
+  text-align: right;
+  max-width: 300px; }
+
+.direction-title {
+  font-weight: bold; }
+
+.comments {
+  list-style: none;
+  padding: unset; }
+
+.comment {
+  background-color: #ffffa8;
+  font-style: italic;
+  margin: 20px;
+  padding: 10px 20px; }

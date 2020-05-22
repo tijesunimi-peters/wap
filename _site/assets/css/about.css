@@ -1,0 +1,25 @@
+.alias {
+  color: red;
+  font-family: 'Courier New', Courier, monospace; }
+
+.be-happy {
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column; }
+  .be-happy small {
+    margin-left: auto;
+    font-style: italic; }
+
+.my-moods {
+  display: flex;
+  background-color: black;
+  padding: 10px;
+  box-sizing: border-box;
+  height: 180px;
+  overflow: hidden; }
+  .my-moods div {
+    flex: 1;
+    max-height: 160px;
+    overflow: hidden; }
+  .my-moods img {
+    width: 100%; }

@@ -59,21 +59,27 @@
         }
       })();
 
-      let nameElem = doc.querySelector('#name');
-      let depositElem = doc.querySelector('#deposit');
-      let typeElem = doc.querySelector('#type');
-      let button = doc.querySelector('#submit')
-      let textarea = doc.querySelector('#screen');
-      
-      button.addEventListener('click', function() {
-        let name = nameElem.value;
-        let deposit = depositElem.value;
-        let type = typeElem.value;
+      function init() {
+        let nameElem = doc.querySelector('#name');
+        let depositElem = doc.querySelector('#deposit');
+        let typeElem = doc.querySelector('#type');
+        let button = doc.querySelector('#submit')
+        let textarea = doc.querySelector('#screen');
+        
+        button.addEventListener('click', function() {
+          let name = nameElem.value;
+          let deposit = depositElem.value;
+          let type = typeElem.value;
 
-        accounts.createAccount(name, deposit, type, textarea);
-      });
+          accounts.createAccount(name, deposit, type, textarea);
+        });
+      }
+
+      return { init }
 
     })(document);
+
+    window.onload = module.init;
   </script>
 </body>
 </html>

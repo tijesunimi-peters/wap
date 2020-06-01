@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ACSIImation</title>
+  <link rel="stylesheet" href="/wap/assets/css/ascii.css">
+</head>
+<body>
+
+  <h1>CSE 190 M ASCII Animation Viewer</h1>
+  <div class="textarea-wrapper">
+    <textarea name="" id="textarea" cols="80" rows="30"></textarea>
+  </div>
+  <div class="fieldsets">
+    <fieldset>
+      <legend>Play controls: </legend>
+      <button id="start">Start</button>
+      <button id="stop">Stop</button>
+    </fieldset>
+    <fieldset>
+      <legend>Animation: </legend>
+      <select name="" id="animation">
+        <option value="Blank">Blank</option>
+        <option value="Exercise">Exercise</option>
+        <option value="Juggler">Juggler</option>
+        <option value="Bike">Bike</option>
+        <option value="Dive">Dive</option>
+        <option value="Custom">Custom</option>
+      </select>
+    </fieldset>
+    <fieldset>
+      <legend>Size: </legend>
+      <select name="" id="size">
+        <option value="tiny">Tiny</option>
+        <option value="small">Small</option>
+        <option value="medium">Medium</option>
+        <option value="large">Large</option>
+        <option value="extra-large">Extra Large</option>
+        <option value="xxl">Extra Large</option>
+      </select>
+    </fieldset>
+
+    <fieldset>
+      <legend>Turbo: </legend>
+      <input type="checkbox" id='turbo'> Turbo
+    </fieldset>
+  </div>
+  
+  <script src="/wap/assets/js/animations.js"></script>
+  <script src="/wap/assets/js/ascii.js"></script>
+</body>
+</html>

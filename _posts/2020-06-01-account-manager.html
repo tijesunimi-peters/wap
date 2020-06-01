@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account</title>
+</head>
+<body>
+  <div>
+    <label for="name">Account Name</label>
+    <input type="text" id="name" />
+  </div>
+
+  <div>
+    <label for="deposit">Deposit</label>
+    <input type="text" id="deposit" />
+  </div>
+
+  <div>
+    <label for="type">Type: </label>
+    <select name="" id="type">
+      <option value="">Select</option>
+      <option value="savings">Saving</option>
+      <option value="checkings">Checkings</option>
+    </select>
+  </div>
+
+  <div>
+    <textarea name="" id="screen" cols="30" rows="10"></textarea>
+  </div>
+
+  <div>
+    <button id="submit">Create new account</button>
+  </div>
+  
+  <script>
+    let module = (function(doc) {
+      'use strict';
+
+      let accounts = (function() {
+        let list = [];
+
+        function createAccount(name, deposit, type, viewarea) {
+          list.push({ name, deposit, type });
+          printAccounts(viewarea);
+        }
+
+        function printAccounts(viewarea) {
+          let output = list.reduce((acc, item) => {
+            acc += "Account Name: " + item.name + "; Deposit: " + item.deposit + "; Type: " + item.type + "\n";
+            return acc;
+          }, "")
+
+          viewarea.value = output;
+        }
+
+        return  {
+          createAccount
+        }
+      })();
+
+      let nameElem = doc.querySelector('#name');
+      let depositElem = doc.querySelector('#deposit');
+      let typeElem = doc.querySelector('#type');
+      let button = doc.querySelector('#submit')
+      let textarea = doc.querySelector('#screen');
+      
+      button.addEventListener('click', function() {
+        let name = nameElem.value;
+        let deposit = depositElem.value;
+        let type = typeElem.value;
+
+        accounts.createAccount(name, deposit, type, textarea);
+      });
+
+    })(document);
+  </script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+---
+---
+
+
+
+body, button {
+	font-family: cursive;
+	font-size: 14pt;
+	text-align: center;
+}
+
+/* The area that holds the 15 puzzle pieces. */
+#puzzlearea {
+	font-size: 40pt;
+	width: 400px;
+	height: 400px;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+}
+
+/* This class should be applied to each of the 15 puzzle pieces. */
+.puzzlepiece {
+	background-image: url("{{ '/' | absolute}}wap/assets/img/background.jpg");
+	border: 5px solid black;
+	width: 90px;
+	height: 90px;
+	position: absolute;
+}
+
+.puzzlepiece2 {
+	left: 100px;
+	top: 0;
+	background-position: -100px 0px;
+}
+
+.puzzlepiece3 {
+	left: 200px;
+	top: 0;
+	background-position: -200px 0px;
+}
+
+.puzzlepiece4 {
+	left: 300px;
+	top: 0;
+	background-position: -300px 0px;
+}
+
+.puzzlepiece5 {
+	left: 0;
+	top: 100px;
+	background-position: 0 -100px;
+}
+
+.puzzlepiece6 {
+	left: 100px;
+	top: 100px;
+	background-position: -100px -100px;
+}
+.puzzlepiece7 {
+	left: 200px;
+	top: 100px;
+	background-position: -200px -100px;
+}
+.puzzlepiece8 {
+	left: 300px;
+	top: 100px;
+	background-position: -300px -100px;
+}
+.puzzlepiece9 {
+	left: 0px;
+	top: 200px;
+	background-position: 0px -200px;
+}
+.puzzlepiece10 {
+	left: 100px;
+	top: 200px;
+	background-position: -100px -200px;
+}
+
+.puzzlepiece11 {
+	left: 200px;
+	top: 200px;
+	background-position: -200px -200px;
+}
+
+.puzzlepiece12 {
+	left: 300px;
+	top: 200px;
+	background-position: -300px -200px;
+}
+
+.puzzlepiece13 {
+	left: 0px;
+	top: 300px;
+	background-position: 0px -300px;
+}
+
+.puzzlepiece14 {
+	left: 100px;
+	top: 300px;
+	background-position: -100px -300px;
+}
+
+.puzzlepiece15 {
+	left: 200px;
+	top: 300px;
+	background-position: -200px -300px;
+}
+
+#puzzlearea:after {
+	content: '';
+	clear: both;
+	display: table;
+}
+
+/* This class should be applied to a puzzle piece that can be moved. */
+.movablepiece:hover {
+	border-color: red;
+	color: red;
+}
+
+/* grading styles -- for TAs only; not required by students */
+#gradingarea {
+	position: fixed;
+	right: 0px;
+	top: 0px;
+	z-index: 999999;
+}
+
+.valid {
+	background-color: #bfb;
+}
+
+.invalid {
+	background-color: #f88;
+}
+
+
+

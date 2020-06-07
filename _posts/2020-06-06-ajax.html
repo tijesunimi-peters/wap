@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ajax</title>
+    <style>
+      .posts .left, .posts .right {
+        float: left;
+        width: 40%;
+      }
+
+      .post:after {
+        content: '';
+        display: table;
+        clear: both;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CS472 Output Comparison Tool</h1>
+    <div>
+      <select name="" id="choose-file">
+        <option>Select file</option>
+        <option value="songs.txt">Song</option>
+        <option value="space.txt">Space</option>
+        <option value="time.txt">Time</option>
+      </select>
+    </div>
+    <div>
+      <textarea name="" id="output-area" cols="100" rows="30"></textarea>
+    </div>
+
+    <div class="posts">
+      <div class="left">
+        <h1>Posts</h1>
+        <div>
+          <label for="select-type">
+            <select name="" id="select-type">
+              <option value="posts" default>Posts</option>
+              <option value="comments">Comments</option>
+            </select>
+          </label>
+          <label for="select-user">
+            <select name="" id="select-user">
+              <option value="">Select user</option>
+              <option value="1">User 1</option>
+              <option value="2">User 2</option>
+              <option value="3">User 3</option>
+              <option value="4">User 4</option>
+            </select>
+          </label>
+        </div>
+        <div id="posts-list"></div>
+      </div>
+      <div class="right">
+        <h1>Comments</h1>
+        <div id="comments-list"></div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(function () {
+        const fileSelector = $("#choose-file");
+        const outputarea = $("#output-area");
+        const userSelector = $("#select-user");
+        let container;
+
+        fileSelector.change(function () {
+          const val = $(this).val();
+          $.ajax({
+            url: "{{ '/' | absolute_url}}" + val,
+            type: "GET",
+            success: function (response) {
+              outputarea.val(response);
+            },
+            error: function (error) {
+              console.log(error);
+            },
+          });
+        });
+
+        function buildSinglePost(type) {
+          return function (response) {
+            container.css("max-width", "500px");
+
+            response.forEach(function (post) {
+              const wrapper = $("<div>", {
+                class: type+"-item",
+                style:
+                  "margin-bottom: 50px; padding: 10px; border: 1px solid grey; border-radius: 4px",
+              });
+              const postTitle = $("<h2>", { text: type == 'posts' ? post.title : post.name });
+              const postBody = $("<p>", { text: post.body });
+              wrapper.append(postTitle);
+              wrapper.append(postBody);
+              container.append(wrapper);
+            });
+          };
+        }
+
+        userSelector.change(function () {
+          const val = $(this).val();
+          const typeVal = $("#select-type").val();
+          container = typeVal == 'posts' ? $(".posts #posts-list") : $('.posts #comments-list');
+
+          $.ajax({
+            url:
+              "http://jsonplaceholder.typicode.com/" +
+              typeVal +
+              "?userId=" +
+              val,
+            type: "GET",
+            success: buildSinglePost(typeVal),
+            error: function (err) {
+              console.log(err);
+            },
+          });
+
+          container.empty();
+        });
+      });
+    </script>
+    <script></script>
+  </body>
+</html>
